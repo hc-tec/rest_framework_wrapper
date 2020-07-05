@@ -34,7 +34,7 @@ class ShowTaskTag(generics.ListAPIView):
 ]
 ```
 
-
+封装后的 ListAPIView
 ```py
 from rest_framework_wrapper.generics import ListAPIView
 class ShowTaskTag(ListAPIView):
@@ -74,6 +74,43 @@ class ShowTaskTag(ListAPIView):
             "name": "寒假活动"
         }
     ]
+}
+```
+
+其他的类同理
+下面是默认配置
+```py
+DEFAULT_SUCCESS_RESPONSE_CONFIG = {
+    // ListAPIView
+    'get': {
+        'code': 200,
+        'msg': '数据获取成功',
+    },
+    // CreateAPIView
+    'post': {
+        'code': 201,
+        'msg': '数据创建成功',
+    },
+    // UpdateAPIView
+    'patch': {
+        'code': 202,
+        'msg': '数据局部更新成功',
+    },
+    //  UpdateAPIView
+    'put': {
+        'code': 203,
+        'msg': '数据已全部更新成功',
+    },
+    // DestoryAPIView
+    'delete': {
+        'code': 204,
+        'msg': '数据删除成功',
+    },
+    // RetrieveAPIView
+    'retrieve': {
+        'code': 205,
+        'msg': '数据创建成功',
+    },
 }
 ```
 
